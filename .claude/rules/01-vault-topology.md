@@ -1,0 +1,16 @@
+---
+paths:
+  - '**/*'
+---
+## Vault Topology (Johnny Decimal, 00-09)
+- `00-inbox/`: Quick capture and unclassified notes.
+- `01-areas/`: Ongoing spheres of responsibility.
+- `02-projects/<PRJ>/`: Active projects (`project.md`, `current-state.md`).
+- `03-knowledge/`: Durable technical knowledge (`patterns/`, `problems/`, `system/`).
+- `04-decisions/`: Canonical Architectural Decision Records (`DEC-*`).
+- `05-workflows/`: Standard operating procedures and pipelines.
+- `06-sessions/`: Ephemeral session logs and handoffs (`SES-*`).
+- `07-entities/`: System entities and actors.
+- `08-system/`: Engine schemas, registry, charter, constraints, candidates (`MEM-*`), and canonical agents configuration (`08-system/agents/.rulesync/` is the single canonical rulesync source).
+- `09-archive/`: Deprecated or completed historical records.
+- `openspec/`: Work-in-progress change proposals and task tracking (distinct from canonical memory).

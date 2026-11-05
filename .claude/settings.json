@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m dev.cli session bootstrap --agent ClaudeCode --format text",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|mcp__ai-obsidian__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m dev.core.owned_hook --harness claudecode",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Edit(**)",
+      "Read(**)"
+    ],
+    "deny": [
+      "Bash(Remove-Item -Path C:\\Users\\helder.toucas\\Dev *)",
+      "Bash(Remove-Item -Path C:\\Users\\helder.toucas\\Dev)",
+      "Bash(git add --all *)",
+      "Bash(git add --all)",
+      "Bash(git add -A *)",
+      "Bash(git add -A)",
+      "Bash(git add .)",
+      "Bash(git commit --all *)",
+      "Bash(git commit -a *)",
+      "Bash(git commit -a)",
+      "Bash(git commit -am *)",
+      "Bash(git push --delete *)",
+      "Bash(git push --delete)",
+      "Bash(git push --force *)",
+      "Bash(git push --force)",
+      "Bash(git push --force-with-lease *)",
+      "Bash(git push --force-with-lease)",
+      "Bash(git push -f *)",
+      "Bash(git push -f)",
+      "Bash(git push origin --delete *)",
+      "Bash(git push origin --force *)",
+      "Bash(git push origin --force-with-lease *)",
+      "Bash(git push origin -f *)",
+      "Bash(git stash *)",
+      "Bash(git stash)",
+      "Bash(rm -rf /Users/heldertoucas/Dev)",
+      "Bash(rm -rf /Users/heldertoucas/Dev/)",
+      "Bash(rm -rf C:\\Users\\helder.toucas\\Dev)",
+      "Bash(rm -rf C:\\Users\\helder.toucas\\Dev/)",
+      "Bash(rm -rf ~/Dev)",
+      "Bash(rm -rf ~/Dev/)",
+      "Bash(rmdir /s /q C:\\Users\\helder.toucas\\Dev)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/.env*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/id_rsa*)",
+      "Read(**/keys.txt)"
+    ]
+  }
+}

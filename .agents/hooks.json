@@ -1,10 +1,28 @@
 {
-  "du-bootstrap": {
+  "rulesync": {
     "PreInvocation": [
       {
         "type": "command",
         "command": "python -m dev.cli session bootstrap --agent Antigravity --format antigravity",
         "timeout": 5
+      }
+    ],
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python -m dev.cli session bootstrap --agent Antigravity --format text",
+        "timeout": 5
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m dev.core.owned_hook --harness antigravity",
+            "timeout": 2
+          }
+        ]
       }
     ]
   }

@@ -1,5 +1,282 @@
 {
+  "mcp": {
+    "servers": {
+      "dev-universe": {
+        "type": "local",
+        "command": [
+          "C:/Users/helder.toucas/Dev/engine/.venv/Scripts/python.exe",
+          "-u",
+          "-m",
+          "dev.mcp.dispatcher"
+        ],
+        "environment": {
+          "DEV_ROOT": "C:/Users/helder.toucas/Dev",
+          "PYTHONPATH": "C:/Users/helder.toucas/Dev/engine",
+          "PYTHONUNBUFFERED": "1",
+          "PYTHONIOENCODING": "utf-8"
+        }
+      },
+      "fetch": {
+        "type": "local",
+        "command": [
+          "C:/Users/helder.toucas/scoop/persist/uv/tools/versions/mcp-server-fetch/Scripts/python.exe",
+          "-m",
+          "mcp_server_fetch"
+        ]
+      },
+      "graphify": {
+        "type": "local",
+        "command": [
+          "C:/Users/helder.toucas/Dev/graphify/.venv/Scripts/python.exe",
+          "-u",
+          "-m",
+          "graphify.serve"
+        ],
+        "environment": {
+          "PYTHONPATH": "C:/Users/helder.toucas/Dev/graphify",
+          "PYTHONUNBUFFERED": "1",
+          "PYTHONIOENCODING": "utf-8"
+        }
+      },
+      "context7": {
+        "type": "local",
+        "command": [
+          "cmd.exe",
+          "/c",
+          "context7-mcp.cmd"
+        ]
+      },
+      "playwright": {
+        "type": "local",
+        "command": [
+          "cmd.exe",
+          "/c",
+          "playwright-mcp.cmd",
+          "--headless"
+        ]
+      },
+      "ai-obsidian": {
+        "type": "local",
+        "command": [
+          "node",
+          "C:/Users/helder.toucas/Dev/ai-obsidian/dist/index.js"
+        ],
+        "environment": {
+          "OBSIDIAN_VAULT_PATH": "C:/Users/helder.toucas/Dev/home",
+          "GEMINI_OBSIDIAN_DB_PATH": "C:/Users/helder.toucas/Dev/.dev-cache/ai-obsidian-lancedb",
+          "GEMINI_OBSIDIAN_HASH_PATH": "C:/Users/helder.toucas/Dev/.dev-cache/ai-obsidian-file-hashes.json"
+        }
+      }
+    }
+  },
+  "permissions": [
+    {
+      "action": "read",
+      "resource": "**",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": "**/.env*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "**/keys.txt",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "**/*.pem",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "**/*.key",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "**/id_rsa*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "**/id_ed25519*",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "**",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --force",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --force *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --force-with-lease",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --force-with-lease *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push -f",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push -f *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --delete",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push --delete *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push origin --force *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push origin --force-with-lease *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push origin -f *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push origin --delete *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git add -A",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git add -A *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git add .",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git add --all",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git add --all *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git commit -a",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git commit -a *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git commit -am *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git commit --all *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git stash",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git stash *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf C:\\Users\\helder.toucas\\Dev",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf C:\\Users\\helder.toucas\\Dev/",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rmdir /s /q C:\\Users\\helder.toucas\\Dev",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "Remove-Item -Path C:\\Users\\helder.toucas\\Dev",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "Remove-Item -Path C:\\Users\\helder.toucas\\Dev *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf ~/Dev",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf ~/Dev/",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf /Users/heldertoucas/Dev",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm -rf /Users/heldertoucas/Dev/",
+      "effect": "deny"
+    }
+  ],
   "instructions": [
-    ".opencode/memories/overview.md"
+    ".opencode/memories/01-vault-topology.md"
   ]
 }

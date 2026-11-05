@@ -1,0 +1,72 @@
+tools:
+  approval:
+    read: deny
+    write: prompt
+    edit: prompt
+    bash: allow
+bash:
+  patterns:
+    - match: git push --force
+      approval: deny
+    - match: git push --force *
+      approval: deny
+    - match: git push --force-with-lease
+      approval: deny
+    - match: git push --force-with-lease *
+      approval: deny
+    - match: git push -f
+      approval: deny
+    - match: git push -f *
+      approval: deny
+    - match: git push --delete
+      approval: deny
+    - match: git push --delete *
+      approval: deny
+    - match: git push origin --force *
+      approval: deny
+    - match: git push origin --force-with-lease *
+      approval: deny
+    - match: git push origin -f *
+      approval: deny
+    - match: git push origin --delete *
+      approval: deny
+    - match: git add -A
+      approval: deny
+    - match: git add -A *
+      approval: deny
+    - match: git add .
+      approval: deny
+    - match: git add --all
+      approval: deny
+    - match: git add --all *
+      approval: deny
+    - match: git commit -a
+      approval: deny
+    - match: git commit -a *
+      approval: deny
+    - match: git commit -am *
+      approval: deny
+    - match: git commit --all *
+      approval: deny
+    - match: git stash
+      approval: deny
+    - match: git stash *
+      approval: deny
+    - match: rm -rf C:\Users\helder.toucas\Dev
+      approval: deny
+    - match: rm -rf C:\Users\helder.toucas\Dev/
+      approval: deny
+    - match: rmdir /s /q C:\Users\helder.toucas\Dev
+      approval: deny
+    - match: Remove-Item -Path C:\Users\helder.toucas\Dev
+      approval: deny
+    - match: Remove-Item -Path C:\Users\helder.toucas\Dev *
+      approval: deny
+    - match: rm -rf ~/Dev
+      approval: deny
+    - match: rm -rf ~/Dev/
+      approval: deny
+    - match: rm -rf /Users/heldertoucas/Dev
+      approval: deny
+    - match: rm -rf /Users/heldertoucas/Dev/
+      approval: deny

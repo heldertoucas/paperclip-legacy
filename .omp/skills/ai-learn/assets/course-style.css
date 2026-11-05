@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Light Theme (Default) */
+    --bg-color: #faf9f6;
+    --text-color: #111111;
+    --accent-color: #5271ff;
+    --box-bg: #ffffff;
+    --border-color: #e5e5e5;
+    --muted-color: #666666;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Theme */
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --accent-color: #44d9e6;
+        --box-bg: #1e1e1e;
+        --border-color: #333333;
+        --muted-color: #aaaaaa;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+p {
+    font-weight: 300;
+}
+
+.quiz-box {
+    background-color: var(--box-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.quiz-option {
+    display: block;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1.2rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.quiz-option:hover {
+    border-color: var(--accent-color);
+    transform: translateX(4px);
+}
+
+.reference-card {
+    background-color: var(--box-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.muted-text {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}

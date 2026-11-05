@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "command",
+      "read_file",
+      "write_file"
+    ],
+    "deny": [
+      "command(Remove-Item -Path C:\\Users\\helder.toucas\\Dev)",
+      "command(git add --all)",
+      "command(git add -A)",
+      "command(git add .)",
+      "command(git commit --all)",
+      "command(git commit -a)",
+      "command(git commit -am)",
+      "command(git push --delete)",
+      "command(git push --force)",
+      "command(git push --force-with-lease)",
+      "command(git push -f)",
+      "command(git push origin --delete)",
+      "command(git push origin --force)",
+      "command(git push origin --force-with-lease)",
+      "command(git push origin -f)",
+      "command(git stash)",
+      "command(rm -rf /Users/heldertoucas/Dev)",
+      "command(rm -rf /Users/heldertoucas/Dev/)",
+      "command(rm -rf C:\\Users\\helder.toucas\\Dev)",
+      "command(rm -rf C:\\Users\\helder.toucas\\Dev/)",
+      "command(rm -rf ~/Dev)",
+      "command(rm -rf ~/Dev/)",
+      "command(rmdir /s /q C:\\Users\\helder.toucas\\Dev)"
+    ]
+  }
+}

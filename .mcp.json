@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "dev-universe": {
+      "command": "C:/Users/helder.toucas/Dev/engine/.venv/Scripts/python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "dev.mcp.dispatcher"
+      ],
+      "env": {
+        "DEV_ROOT": "C:/Users/helder.toucas/Dev",
+        "PYTHONPATH": "C:/Users/helder.toucas/Dev/engine",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "fetch": {
+      "command": "C:/Users/helder.toucas/scoop/persist/uv/tools/versions/mcp-server-fetch/Scripts/python.exe",
+      "args": [
+        "-m",
+        "mcp_server_fetch"
+      ]
+    },
+    "graphify": {
+      "command": "C:/Users/helder.toucas/Dev/graphify/.venv/Scripts/python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "graphify.serve"
+      ],
+      "env": {
+        "PYTHONPATH": "C:/Users/helder.toucas/Dev/graphify",
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "context7": {
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "context7-mcp.cmd"
+      ]
+    },
+    "playwright": {
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "playwright-mcp.cmd",
+        "--headless"
+      ]
+    },
+    "ai-obsidian": {
+      "command": "node",
+      "args": [
+        "C:/Users/helder.toucas/Dev/ai-obsidian/dist/index.js"
+      ],
+      "env": {
+        "OBSIDIAN_VAULT_PATH": "C:/Users/helder.toucas/Dev/home",
+        "GEMINI_OBSIDIAN_DB_PATH": "C:/Users/helder.toucas/Dev/.dev-cache/ai-obsidian-lancedb",
+        "GEMINI_OBSIDIAN_HASH_PATH": "C:/Users/helder.toucas/Dev/.dev-cache/ai-obsidian-file-hashes.json"
+      }
+    }
+  }
+}
